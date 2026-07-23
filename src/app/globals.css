@@ -1,26 +1,171 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------ */
+/* Design tokens — estritamente monocromático (fonte da verdade)      */
+/* ------------------------------------------------------------------ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --white: #ffffff;
+  --off-white: #f5f5f2;
+  --gray-100: #e8e8e3;
+  --gray-400: #a3a3a0;
+  --gray-700: #4a4a48;
+  --black: #111111;
+  --absolute-black: #000000;
+
+  /* Estrutura */
+  --line-thin: 1px;
+
+  /* Layout — quase full-bleed, gutters laterais discretos            */
+  --gutter: 20px;
+  --col-gap: 16px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (min-width: 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --gutter: 32px;
+    --col-gap: 20px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 40px;
+    --col-gap: 24px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Tema Tailwind — mapeamento semântico sobre os tokens brutos        */
+/* ------------------------------------------------------------------ */
+@theme inline {
+  --color-paper: var(--white);
+  --color-off-white: var(--off-white);
+  --color-line: var(--gray-100);
+  --color-line-strong: var(--black);
+  --color-mute: var(--gray-400);
+  --color-graphite: var(--gray-700);
+  --color-ink: var(--black);
+  --color-void: var(--absolute-black);
+
+  --font-sans: var(--font-urbanist);
+  --font-mono: var(--font-fragment-mono);
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                               */
+/* ------------------------------------------------------------------ */
+@layer base {
+  * {
+    border-radius: 0; /* ortogonal, sem cantos arredondados */
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--font-urbanist), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "kern";
+  }
+
+  ::selection {
+    background: var(--black);
+    color: var(--white);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Componentes — em @layer para que utilitários (ex.: md:hidden)       */
+/* possam sobrescrever quando necessário                              */
+/* ------------------------------------------------------------------ */
+@layer components {
+  /* Grid — 4 / 8 / 12 colunas, quase full-bleed */
+  .grid-shell {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: var(--col-gap);
+    padding-inline: var(--gutter);
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .grid-shell {
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .grid-shell {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+  }
+
+  /* Bleed helper: escapa o gutter e alcança as bordas da viewport */
+  .bleed {
+    margin-inline: calc(-1 * var(--gutter));
+    width: calc(100% + 2 * var(--gutter));
+  }
+
+  /* Tipografia técnica — Fragment Mono (só o tratamento, cor herdada) */
+  .mono {
+    font-family: var(--font-fragment-mono), ui-monospace, monospace;
+    font-size: 0.6875rem; /* 11px */
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Label técnico com a cor padrão (grafite) */
+  .label-mono {
+    font-family: var(--font-fragment-mono), ui-monospace, monospace;
+    font-size: 0.6875rem; /* 11px */
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-700);
+  }
+
+  /* Hairlines estruturais */
+  .rule {
+    border: 0;
+    border-top: var(--line-thin) solid var(--gray-100);
+  }
+
+  .rule-strong {
+    border: 0;
+    border-top: var(--line-thin) solid var(--black);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Lenis smooth scroll                                                */
+/* ------------------------------------------------------------------ */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+/* Respeita reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

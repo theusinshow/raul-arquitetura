@@ -1,0 +1,138 @@
+import type { Project } from "@/types/project";
+
+/**
+ * Dados provisórios para validar a arquitetura de rotas e alimentar o hero.
+ * Substituir por conteúdo/fotografia real depois.
+ */
+export const projects: Project[] = [
+  {
+    slug: "casa-patio",
+    index: "01",
+    title: "Casa Pátio",
+    location: "São Paulo, BR",
+    year: 2024,
+    category: "Residencial",
+    area: "420 m²",
+  },
+  {
+    slug: "pavilhao-concreto",
+    index: "02",
+    title: "Pavilhão Concreto",
+    location: "Belo Horizonte, BR",
+    year: 2023,
+    category: "Cultural",
+    area: "1.180 m²",
+  },
+  {
+    slug: "estudio-norte",
+    index: "03",
+    title: "Estúdio Norte",
+    location: "Porto, PT",
+    year: 2023,
+    category: "Comercial",
+    area: "260 m²",
+  },
+  {
+    slug: "casa-serra",
+    index: "04",
+    title: "Casa Serra",
+    location: "Campos do Jordão, BR",
+    year: 2022,
+    category: "Residencial",
+    area: "540 m²",
+  },
+  {
+    slug: "galpao-luz",
+    index: "05",
+    title: "Galpão Luz",
+    location: "São Paulo, BR",
+    year: 2022,
+    category: "Cultural",
+    area: "890 m²",
+  },
+  {
+    slug: "residencia-mar",
+    index: "06",
+    title: "Residência Mar",
+    location: "Florianópolis, BR",
+    year: 2021,
+    category: "Residencial",
+    area: "610 m²",
+  },
+  {
+    slug: "praca-baixa",
+    index: "07",
+    title: "Praça Baixa",
+    location: "Lisboa, PT",
+    year: 2021,
+    category: "Urbano",
+    area: "2.400 m²",
+  },
+  {
+    slug: "pavilhao-vidro",
+    index: "08",
+    title: "Pavilhão Vidro",
+    location: "Curitiba, BR",
+    year: 2020,
+    category: "Comercial",
+    area: "330 m²",
+  },
+  {
+    slug: "casa-taipa",
+    index: "09",
+    title: "Casa Taipa",
+    location: "Tiradentes, BR",
+    year: 2020,
+    category: "Residencial",
+    area: "380 m²",
+  },
+  {
+    slug: "biblioteca-vale",
+    index: "10",
+    title: "Biblioteca Vale",
+    location: "Coimbra, PT",
+    year: 2019,
+    category: "Cultural",
+    area: "1.640 m²",
+  },
+  {
+    slug: "atelie-pedra",
+    index: "11",
+    title: "Ateliê Pedra",
+    location: "Ouro Preto, BR",
+    year: 2019,
+    category: "Comercial",
+    area: "210 m²",
+  },
+  {
+    slug: "casa-duas-aguas",
+    index: "12",
+    title: "Casa Duas Águas",
+    location: "Gramado, BR",
+    year: 2018,
+    category: "Residencial",
+    area: "470 m²",
+  },
+  {
+    slug: "mercado-central",
+    index: "13",
+    title: "Mercado Central",
+    location: "Recife, BR",
+    year: 2018,
+    category: "Urbano",
+    area: "3.100 m²",
+  },
+  {
+    slug: "capela-branca",
+    index: "14",
+    title: "Capela Branca",
+    location: "Évora, PT",
+    year: 2017,
+    category: "Cultural",
+    area: "180 m²",
+  },
+];
+
+export function getProject(slug: string): Project | undefined {
+  return projects.find((p) => p.slug === slug);
+}
