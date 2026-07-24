@@ -69,14 +69,16 @@ export default function ProjetoDestaque() {
 
         <div
           data-d="fig"
-          className="col-span-4 mt-10 [will-change:clip-path] md:col-span-3 md:col-start-6 md:mt-20 lg:col-span-4 lg:col-start-9 lg:mt-28"
+          className="col-span-4 mt-10 [will-change:clip-path] md:col-span-4 md:col-start-5 md:mt-20 lg:col-span-5 lg:col-start-8 lg:mt-28"
         >
-          <div className="grayscale">
+          <div className="grayscale transition-[filter] duration-700 ease-out hover:grayscale-0">
             <Figure
+              src={featured.cover}
+              alt={`${featured.title}, ${featured.location}`}
               index={featured.index}
               caption={`${featured.title} · ${featured.year}`}
-              className="aspect-[4/5] w-full"
-              sizes="(max-width: 768px) 100vw, 34vw"
+              className="aspect-4/5 w-full"
+              sizes="(max-width: 768px) 100vw, 42vw"
             />
           </div>
         </div>

@@ -15,4 +15,6 @@ export interface Project {
   area: string;
   /** Caminho da imagem de capa (fotografia arquitetônica). Opcional por ora. */
   cover?: string;
+  /** Fotos do projeto (a primeira é a capa). Usada na ciclagem do hero. */
+  gallery?: string[];
 }

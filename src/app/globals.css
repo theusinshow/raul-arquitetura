@@ -77,6 +77,21 @@
     background: var(--black);
     color: var(--white);
   }
+
+  /* Foco visível — ortogonal, sem halo; inverte em seções escuras */
+  :focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 3px;
+  }
+
+  [data-nav="invert"] :focus-visible {
+    outline-color: var(--white);
+  }
+
+  /* Âncoras não ficam sob a navbar flutuante */
+  :target {
+    scroll-margin-top: 6rem;
+  }
 }
 
 /* ------------------------------------------------------------------ */
