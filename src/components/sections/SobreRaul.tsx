@@ -24,7 +24,7 @@ export default function SobreRaul() {
   useReveal(root);
 
   return (
-    <section ref={root} className="py-24 md:py-32 lg:py-40">
+    <section ref={root} data-respiro="5">
       <Grid className="gap-y-12">
         <div className="col-span-4 md:col-span-8 lg:col-span-7">
           <h2 className="text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.2] font-medium tracking-[-0.02em] text-ink">

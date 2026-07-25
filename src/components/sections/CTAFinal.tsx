@@ -16,7 +16,8 @@ export default function CTAFinal() {
     <section
       ref={root}
       data-nav="invert"
-      className="bg-ink pt-28 pb-24 text-paper md:pt-40 md:pb-32"
+      data-respiro="6"
+      className="bg-ink text-paper"
     >
       <Grid>
         <div className="col-span-4 flex items-center justify-between border-t border-graphite pt-4 md:col-span-8 lg:col-span-12">

@@ -148,6 +148,38 @@
     color: var(--gray-700);
   }
 
+  /* ----------------------------------------------------------------
+     Rampa de respiro — o espaçamento vertical CRESCE conforme a página
+     avança, para que a leitura desacelere. Espaço constante não produz
+     respiro, produz monotonia: o olho só percebe folga por contraste.
+
+     Aplicada com data-respiro="1".."6" na <section>. Como os paddings de
+     seções vizinhas se somam, o intervalo entre duas seções é a soma dos
+     dois degraus — 224px no topo da Home, 480px no fecho.
+     ---------------------------------------------------------------- */
+  [data-respiro] {
+    padding-block: var(--respiro);
+  }
+
+  [data-respiro="1"] {
+    --respiro: clamp(3.5rem, 6.7vw, 6rem); /* 56 → 96 */
+  }
+  [data-respiro="2"] {
+    --respiro: clamp(4rem, 8.9vw, 8rem); /* 64 → 128 */
+  }
+  [data-respiro="3"] {
+    --respiro: clamp(4.5rem, 11.1vw, 10rem); /* 72 → 160 */
+  }
+  [data-respiro="4"] {
+    --respiro: clamp(5rem, 13.3vw, 12rem); /* 80 → 192 */
+  }
+  [data-respiro="5"] {
+    --respiro: clamp(5.5rem, 15.6vw, 14rem); /* 88 → 224 */
+  }
+  [data-respiro="6"] {
+    --respiro: clamp(6rem, 17.8vw, 16rem); /* 96 → 256 */
+  }
+
   /* Hairlines estruturais */
   .rule {
     border: 0;

@@ -22,7 +22,7 @@ export default function MaisProjetos() {
   const active = hovered ?? 0;
 
   return (
-    <section ref={root} className="py-24 md:py-32 lg:py-40">
+    <section ref={root} data-respiro="4">
       <Grid>
         <h2 className="col-span-4 text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.15] font-medium tracking-[-0.02em] text-ink md:col-span-6 lg:col-span-7">
           <span className="block overflow-hidden">

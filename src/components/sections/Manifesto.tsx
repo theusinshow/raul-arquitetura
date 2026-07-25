@@ -22,7 +22,8 @@ export default function Manifesto() {
     <section
       ref={root}
       data-nav="invert"
-      className="bg-ink py-28 text-paper md:py-36 lg:py-44"
+      data-respiro="3"
+      className="bg-ink text-paper"
     >
       <Grid>
         <div className="col-span-4 flex items-center justify-between border-t border-graphite pt-4 md:col-span-8 lg:col-span-12">

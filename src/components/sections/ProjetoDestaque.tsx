@@ -42,7 +42,7 @@ export default function ProjetoDestaque() {
   }, []);
 
   return (
-    <section ref={root} className="relative py-24 md:py-32 lg:py-40">
+    <section ref={root} data-respiro="1" className="relative">
       {/* Sem rótulo de seção: a obra entra pelo nome, em escala de display.
           O kicker mono é reservado aos capítulos escuros da página. */}
       <Grid className="relative">
