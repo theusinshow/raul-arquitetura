@@ -11,6 +11,21 @@ export const site = {
   locale: "pt-BR",
 } as const;
 
+/**
+ * Dados de contato — ponto único. Antes o e-mail estava repetido no Footer e
+ * no CTA da Home; a /contato seria a terceira cópia.
+ */
+export const contato = {
+  email: "estudio@raul.arq",
+  telefone: "+55 11 0000—0000",
+  /** Formato E.164 para o href do tel: */
+  telefoneHref: "+551100000000",
+  endereco: "Rua Harmonia, 1100 — Vila Madalena",
+  cidade: "São Paulo, BR",
+  atendimento: "Segunda a sexta, 9h — 18h",
+  atuacao: "Brasil e Portugal",
+} as const;
+
 /** Itens de navegação principais. */
 export const navItems = [
   { label: "Projetos", href: "/projetos" },

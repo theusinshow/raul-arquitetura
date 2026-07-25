@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Grid } from "@/components/layout/Grid";
 import { Logo } from "@/components/ui/Logo";
-import { navItems, site } from "@/lib/site";
+import { contato, navItems, site } from "@/lib/site";
 
 /**
  * Footer global — mesmo fundo do CTA Final, separado por hairline. Presente
@@ -41,12 +41,12 @@ export default function Footer() {
         {/* Contato */}
         <div className="col-span-2 flex flex-col gap-3 md:col-span-4 lg:col-span-3 lg:col-start-10">
           <a
-            href="mailto:estudio@raul.arq"
+            href={`mailto:${contato.email}`}
             className="mono text-paper transition-opacity duration-300 hover:opacity-50"
           >
-            estudio@raul.arq
+            {contato.email}
           </a>
-          <span className="mono text-mute">São Paulo, BR</span>
+          <span className="mono text-mute">{contato.cidade}</span>
         </div>
       </Grid>
 

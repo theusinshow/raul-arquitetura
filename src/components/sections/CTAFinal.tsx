@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { Grid } from "@/components/layout/Grid";
+import { contato } from "@/lib/site";
 import { useReveal } from "@/lib/useReveal";
 
 /**
@@ -48,11 +49,11 @@ export default function CTAFinal() {
       <Grid className="mt-16 items-end gap-y-8 md:mt-24">
         <a
           data-reveal="fade"
-          href="mailto:estudio@raul.arq"
+          href={`mailto:${contato.email}`}
           className="group col-span-4 inline-flex items-center gap-4 border-b border-paper pb-3 md:col-span-5 lg:col-span-6"
         >
           <span className="text-xl font-medium tracking-tight md:text-3xl lg:text-4xl">
-            estudio@raul.arq
+            {contato.email}
           </span>
           <span className="mono transition-transform duration-300 group-hover:translate-x-1">
             →
@@ -63,8 +64,8 @@ export default function CTAFinal() {
           data-reveal="fade"
           className="col-span-4 flex flex-col gap-2 md:col-span-3 md:col-start-6 lg:col-span-3 lg:col-start-10 lg:items-end"
         >
-          <span className="mono text-mute">São Paulo, BR</span>
-          <span className="mono text-mute">+55 11 0000—0000</span>
+          <span className="mono text-mute">{contato.cidade}</span>
+          <span className="mono text-mute">{contato.telefone}</span>
         </div>
       </Grid>
     </section>
