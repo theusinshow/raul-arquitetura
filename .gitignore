@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Fotos-fonte em alta (originais de terceiros; o site usa as otimizadas em public/projetos)
 /assets/
+
+# superpowers brainstorm
+.superpowers/
