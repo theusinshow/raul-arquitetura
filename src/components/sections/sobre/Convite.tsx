@@ -18,7 +18,8 @@ export default function Convite() {
     <section
       ref={root}
       data-nav="invert"
-      className="bg-ink pt-24 pb-20 text-paper md:pt-32 md:pb-24"
+      data-respiro="5"
+      className="bg-ink text-paper"
     >
       <Grid>
         <div className="col-span-4 flex items-center justify-between border-t border-graphite pt-4 md:col-span-8 lg:col-span-12">

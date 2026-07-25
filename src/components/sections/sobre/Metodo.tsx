@@ -54,7 +54,7 @@ export default function Metodo() {
   useReveal(topo, "top 85%");
 
   return (
-    <section className="bg-paper pb-24 md:pb-32 lg:pb-40">
+    <section data-respiro="3" className="bg-paper pt-0">
       <div ref={topo}>
         {/* Faixa de fotografia — a virada do preto para o branco */}
         <div className="grid-shell">

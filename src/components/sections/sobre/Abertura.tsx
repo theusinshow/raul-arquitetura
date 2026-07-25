@@ -7,6 +7,9 @@ import { useReveal } from "@/lib/useReveal";
 /**
  * Abertura da /sobre — batida preta de topo, puramente tipográfica. Inverte a
  * Home (que abre em fotografia) e marca a página como um capítulo à parte.
+ *
+ * O `pt` é próprio (utilitário, que vence a camada components): no topo o
+ * espaço é vão para a navbar, não ritmo. Da rampa vem só o rodapé.
  */
 export default function Abertura() {
   const root = useRef<HTMLElement>(null);
@@ -16,7 +19,8 @@ export default function Abertura() {
     <section
       ref={root}
       data-nav="invert"
-      className="bg-ink pt-32 pb-24 text-paper md:pt-44 md:pb-32 lg:pt-52"
+      data-respiro="2"
+      className="bg-ink pt-32 text-paper md:pt-44 lg:pt-52"
     >
       <Grid>
         <div className="col-span-4 flex items-center justify-between border-t border-graphite pt-4 md:col-span-8 lg:col-span-12">

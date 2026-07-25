@@ -14,7 +14,7 @@ export default function Numeros() {
   useReveal(root);
 
   return (
-    <section ref={root} className="bg-paper pb-28 md:pb-36">
+    <section ref={root} data-respiro="4" className="bg-paper">
       <Grid>
         <h2 className="col-span-4 text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.15] font-medium tracking-[-0.02em] text-ink md:col-span-6 lg:col-span-7">
           <span className="block overflow-hidden">
