@@ -161,6 +161,14 @@
     padding-block: var(--respiro);
   }
 
+  /* Páginas que não são sequências de <section> — /projetos e a página de
+     projeto são documentos contínuos — usam o mesmo degrau como margem entre
+     blocos, em vez de ganhar seções inventadas só para receber padding. */
+  [data-respiro][data-respiro-como="margem"] {
+    padding-block: 0;
+    margin-block-start: var(--respiro);
+  }
+
   [data-respiro="1"] {
     --respiro: clamp(3.5rem, 6.7vw, 6rem); /* 56 → 96 */
   }

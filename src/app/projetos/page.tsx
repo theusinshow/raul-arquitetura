@@ -50,7 +50,7 @@ export default async function ProjetosPage({
       </Grid>
 
       {/* Filtro por categoria — estado na URL */}
-      <Grid className="mt-14 md:mt-20">
+      <Grid data-respiro="2" data-respiro-como="margem">
         <nav
           aria-label="Filtrar por categoria"
           className="col-span-4 flex flex-wrap gap-px border border-line bg-line md:col-span-8 lg:col-span-12"
@@ -68,7 +68,11 @@ export default async function ProjetosPage({
       </Grid>
 
       {/* Grade editorial — proporções e deslocamentos alternados */}
-      <Grid className="mt-14 gap-y-16 md:mt-20 lg:gap-y-24">
+      <Grid
+        data-respiro="3"
+        data-respiro-como="margem"
+        className="gap-y-16 lg:gap-y-24"
+      >
         {lista.map((p, i) => {
           const largo = i % 2 === 0;
           return (

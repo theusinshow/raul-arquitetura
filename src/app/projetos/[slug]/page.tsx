@@ -57,7 +57,7 @@ export default async function ProjetoPage({
       </div>
 
       {/* Título + metadados */}
-      <Grid className="mt-12 gap-y-10 md:mt-16">
+      <Grid data-respiro="1" data-respiro-como="margem" className="gap-y-10">
         <div className="col-span-4 md:col-span-8 lg:col-span-7">
           <p className="mono text-graphite">
             {project.index} — {project.category}
@@ -76,7 +76,11 @@ export default async function ProjetoPage({
       </Grid>
 
       {/* Galeria — proporções alternadas, sem repetição de card */}
-      <Grid className="mt-20 gap-y-14 md:mt-28 lg:gap-y-20">
+      <Grid
+        data-respiro="3"
+        data-respiro-como="margem"
+        className="gap-y-14 lg:gap-y-20"
+      >
         {fotos.slice(1).map((src, n) => (
           <figure
             key={src}
@@ -99,7 +103,7 @@ export default async function ProjetoPage({
       </Grid>
 
       {/* Próximo projeto */}
-      <Grid className="mt-24 md:mt-32">
+      <Grid data-respiro="5" data-respiro-como="margem">
         <Link
           href={`/projetos/${proximo.slug}`}
           className="group col-span-4 flex items-baseline justify-between border-t border-ink pt-5 md:col-span-8 lg:col-span-12"
