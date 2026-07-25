@@ -180,6 +180,13 @@
     --respiro: clamp(6rem, 17.8vw, 16rem); /* 96 → 256 */
   }
 
+  /* Barra de progresso da rotação do hero. A duração é a mesma constante
+     DURACAO do componente; mudar uma exige mudar a outra. */
+  .progresso-hero {
+    transform-origin: left;
+    animation: progresso-hero 4200ms linear forwards;
+  }
+
   /* Hairlines estruturais */
   .rule {
     border: 0;
@@ -189,6 +196,15 @@
   .rule-strong {
     border: 0;
     border-top: var(--line-thin) solid var(--black);
+  }
+}
+
+@keyframes progresso-hero {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
 
@@ -217,5 +233,10 @@ html.lenis body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+
+  /* Sem rotação automática não há o que medir — a barra sairia cheia. */
+  .progresso-hero {
+    display: none;
   }
 }
