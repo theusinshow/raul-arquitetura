@@ -16,17 +16,21 @@ export default function Numeros() {
   return (
     <section ref={root} className="bg-paper pb-28 md:pb-36">
       <Grid>
-        <div className="col-span-4 flex items-center justify-between border-t border-ink pt-4 md:col-span-8 lg:col-span-12">
-          <span data-reveal="fade" className="mono text-graphite">
-            O estúdio
+        <h2 className="col-span-4 text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.15] font-medium tracking-[-0.02em] text-ink md:col-span-6 lg:col-span-7">
+          <span className="block overflow-hidden">
+            <span data-reveal="line" className="block">
+              Dez anos,
+            </span>
           </span>
-          <span data-reveal="fade" className="mono text-graphite">
-            São Paulo, BR
+          <span className="block overflow-hidden">
+            <span data-reveal="line" className="block text-graphite">
+              quatorze obras.
+            </span>
           </span>
-        </div>
+        </h2>
       </Grid>
 
-      <Grid className="mt-12 gap-y-12 md:mt-16">
+      <Grid className="mt-16 gap-y-12 md:mt-20">
         <dl className="col-span-4 grid grid-cols-2 gap-x-6 gap-y-10 md:col-span-8 lg:col-span-7">
           {numeros.map((n) => (
             <div
@@ -46,9 +50,9 @@ export default function Numeros() {
           data-reveal="fade"
           className="col-span-4 md:col-span-8 lg:col-span-3 lg:col-start-10"
         >
-          <h2 className="mono border-t border-line pt-4 text-graphite">
+          <h3 className="mono border-t border-line pt-4 text-graphite">
             Frentes de atuação
-          </h2>
+          </h3>
           <ul className="mt-6 flex flex-col gap-3">
             {atuacao.map((frente) => (
               <li key={frente} className="text-lg text-ink">

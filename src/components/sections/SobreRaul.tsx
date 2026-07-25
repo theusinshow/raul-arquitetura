@@ -25,25 +25,16 @@ export default function SobreRaul() {
 
   return (
     <section ref={root} className="py-24 md:py-32 lg:py-40">
-      <Grid>
-        <div className="col-span-4 flex items-center justify-between border-t border-ink pt-4 md:col-span-8 lg:col-span-12">
-          <span data-reveal="fade" className="mono text-graphite">
-            Sobre RAUL
-          </span>
-          <span data-reveal="fade" className="mono text-graphite">
-            Estúdio
-          </span>
-        </div>
-      </Grid>
-
-      <Grid className="mt-12 gap-y-12 md:mt-16">
-        <p className="col-span-4 text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.2] font-medium tracking-[-0.02em] text-ink md:col-span-8 lg:col-span-7">
-          <span className="block overflow-hidden">
-            <span data-reveal="line" className="block">
-              Um estúdio pequeno, por escolha.
+      <Grid className="gap-y-12">
+        <div className="col-span-4 md:col-span-8 lg:col-span-7">
+          <h2 className="text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.2] font-medium tracking-[-0.02em] text-ink">
+            <span className="block overflow-hidden">
+              <span data-reveal="line" className="block">
+                Um estúdio pequeno, por escolha.
+              </span>
             </span>
-          </span>
-          <span className="mt-2 block text-graphite">
+          </h2>
+          <p className="mt-2 text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.2] font-medium tracking-[-0.02em] text-graphite">
             <span className="block overflow-hidden">
               <span data-reveal="line" className="block">
                 Poucos projetos por ano, cada um
@@ -54,8 +45,8 @@ export default function SobreRaul() {
                 acompanhado do desenho à obra.
               </span>
             </span>
-          </span>
-        </p>
+          </p>
+        </div>
 
         <dl
           data-reveal="fade"

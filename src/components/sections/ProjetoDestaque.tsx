@@ -43,20 +43,9 @@ export default function ProjetoDestaque() {
 
   return (
     <section ref={root} className="relative py-24 md:py-32 lg:py-40">
-      {/* Cabeçalho da seção */}
-      <Grid>
-        <div className="col-span-4 flex items-center justify-between border-t border-ink pt-4 md:col-span-8 lg:col-span-12">
-          <span data-d="fade" className="mono text-graphite">
-            Projeto em destaque
-          </span>
-          <span data-d="fade" className="mono text-graphite">
-            {featured.category} · {featured.index}
-          </span>
-        </div>
-      </Grid>
-
-      {/* Título grande + foto deslocada */}
-      <Grid className="relative mt-10 md:mt-16">
+      {/* Sem rótulo de seção: a obra entra pelo nome, em escala de display.
+          O kicker mono é reservado aos capítulos escuros da página. */}
+      <Grid className="relative">
         <h2 className="col-span-4 text-[clamp(3rem,11vw,9.5rem)] leading-[0.9] font-medium tracking-[-0.03em] text-ink md:col-span-5 lg:col-span-7">
           {words.map((w, i) => (
             <span key={i} className="block overflow-hidden">

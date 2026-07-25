@@ -75,17 +75,6 @@ export default function Metodo() {
         </div>
 
         <Grid className="mt-20 md:mt-28">
-          <div className="col-span-4 flex items-center justify-between border-t border-ink pt-4 md:col-span-8 lg:col-span-12">
-            <span data-reveal="fade" className="mono text-graphite">
-              Método
-            </span>
-            <span data-reveal="fade" className="mono text-graphite">
-              Quatro etapas
-            </span>
-          </div>
-        </Grid>
-
-        <Grid className="mt-10 md:mt-14">
           <h2 className="col-span-4 text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.05] font-medium tracking-[-0.02em] text-ink md:col-span-6 lg:col-span-8">
             <span className="block overflow-hidden">
               <span data-reveal="line" className="block">

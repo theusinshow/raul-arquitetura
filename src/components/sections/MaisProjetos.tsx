@@ -24,17 +24,21 @@ export default function MaisProjetos() {
   return (
     <section ref={root} className="py-24 md:py-32 lg:py-40">
       <Grid>
-        <div className="col-span-4 flex items-center justify-between border-t border-ink pt-4 md:col-span-8 lg:col-span-12">
-          <span data-reveal="fade" className="mono text-graphite">
-            Mais projetos
+        <h2 className="col-span-4 text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1.15] font-medium tracking-[-0.02em] text-ink md:col-span-6 lg:col-span-7">
+          <span className="block overflow-hidden">
+            <span data-reveal="line" className="block">
+              Mais {restantes.length} obras,
+            </span>
           </span>
-          <span data-reveal="fade" className="mono text-graphite">
-            {String(restantes.length).padStart(2, "0")} obras
+          <span className="block overflow-hidden">
+            <span data-reveal="line" className="block text-graphite">
+              do litoral à serra.
+            </span>
           </span>
-        </div>
+        </h2>
       </Grid>
 
-      <Grid className="mt-10 md:mt-14">
+      <Grid className="mt-16 md:mt-20">
         {/* Índice */}
         <div
           data-reveal="fade"
