@@ -120,8 +120,11 @@
     }
   }
 
-  /* Bleed helper: escapa o gutter e alcança as bordas da viewport */
+  /* Bleed helper: escapa o gutter e alcança as bordas da viewport.
+     Como filho direto de .grid-shell, precisa ocupar TODAS as colunas — sem
+     isso o elemento cai numa coluna só e o bleed estende apenas essa largura. */
   .bleed {
+    grid-column: 1 / -1;
     margin-inline: calc(-1 * var(--gutter));
     width: calc(100% + 2 * var(--gutter));
   }

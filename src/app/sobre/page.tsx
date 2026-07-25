@@ -1,27 +1,26 @@
 import type { Metadata } from "next";
-import { Grid } from "@/components/layout/Grid";
-import { site } from "@/lib/site";
+import Abertura from "@/components/sections/sobre/Abertura";
+import Metodo from "@/components/sections/sobre/Metodo";
+import Numeros from "@/components/sections/sobre/Numeros";
+import Convite from "@/components/sections/sobre/Convite";
 
 export const metadata: Metadata = {
   title: "Sobre",
-  description: "Sobre o estúdio RAUL Arquitetura.",
+  description:
+    "RAUL é um estúdio de arquitetura com base em São Paulo e obras no Brasil e em Portugal. Poucos projetos por vez, acompanhados do primeiro croqui à última visita de obra.",
 };
 
 /**
- * Página Sobre — estrutura mínima. O conteúdo editorial será desenvolvido em
- * etapa própria.
+ * /sobre — ritmo inverso ao da Home: abre em preto, vira para o branco pela
+ * faixa de fotografia e volta ao preto no fecho, que encosta no Footer global.
  */
 export default function SobrePage() {
   return (
-    <main className="min-h-dvh pt-32 pb-24 md:pt-40">
-      <Grid className="gap-y-8">
-        <p className="label-mono col-span-4 md:col-span-8 lg:col-span-12">
-          Sobre
-        </p>
-        <h1 className="col-span-4 text-3xl leading-tight font-medium tracking-tight md:col-span-6 md:text-5xl lg:col-span-8 lg:text-6xl">
-          {site.description}
-        </h1>
-      </Grid>
+    <main>
+      <Abertura />
+      <Metodo />
+      <Numeros />
+      <Convite />
     </main>
   );
 }
