@@ -18,6 +18,8 @@ export default function Navbar() {
   const lenisRef = useLenis();
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
+  /** Fora do topo: a navbar ganha placa opaca e deixa de sobrepor conteúdo. */
+  const [rolado, setRolado] = useState(false);
 
   // Trava o scroll enquanto o menu mobile está aberto.
   useEffect(() => {
@@ -33,6 +35,16 @@ export default function Navbar() {
       document.body.style.overflow = "";
     };
   }, [open, lenisRef]);
+
+  // No topo a navbar flutua sobre a fotografia do hero (que tem scrim
+  // próprio); a partir daí ela precisa de fundo, senão o conteúdo passa por
+  // baixo do logo. O Lenis rola a janela de verdade, então scrollY serve.
+  useEffect(() => {
+    const aoRolar = () => setRolado(window.scrollY > 24);
+    aoRolar();
+    window.addEventListener("scroll", aoRolar, { passive: true });
+    return () => window.removeEventListener("scroll", aoRolar);
+  }, [pathname]);
 
   // Detecta seções escuras cruzando a faixa horizontal da navbar.
   useEffect(() => {
@@ -70,7 +82,17 @@ export default function Navbar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
+    <header
+      className={
+        "fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 " +
+        // Sem placa, cliques atravessam para o conteúdo; com placa opaca isso
+        // seria um clique às cegas no que está escondido atrás dela.
+        (rolado
+          ? "pointer-events-auto " +
+            (dark ? "border-graphite bg-ink" : "border-line bg-paper")
+          : "pointer-events-none border-transparent bg-transparent")
+      }
+    >
       <div className="grid-shell py-4 md:py-5">
         <div className="pointer-events-auto relative z-50 col-span-4 flex items-center justify-between gap-4 md:col-span-8 lg:col-span-12">
           {/* Marca */}
