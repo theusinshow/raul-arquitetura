@@ -117,7 +117,7 @@ function EtapaBloco({
           <div className="flex items-start gap-5 border-t border-line pt-5 md:gap-7">
             <span
               aria-hidden
-              className="text-[clamp(2rem,4vw,3.5rem)] leading-[0.8] font-medium tracking-[-0.03em] text-line"
+              className="text-[clamp(2rem,4vw,3.5rem)] leading-[0.8] font-medium tracking-[-0.03em] text-mute"
             >
               {etapa.n}
             </span>

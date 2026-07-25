@@ -36,6 +36,16 @@ export default function Navbar() {
     };
   }, [open, lenisRef]);
 
+  // Esc fecha o menu — é o que se espera de qualquer camada sobreposta.
+  useEffect(() => {
+    if (!open) return;
+    const aoTeclar = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", aoTeclar);
+    return () => window.removeEventListener("keydown", aoTeclar);
+  }, [open]);
+
   // No topo a navbar flutua sobre a fotografia do hero (que tem scrim
   // próprio); a partir daí ela precisa de fundo, senão o conteúdo passa por
   // baixo do logo. O Lenis rola a janela de verdade, então scrollY serve.
@@ -178,7 +188,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Overlay mobile */}
+      {/* Overlay mobile. `inert` quando fechado: sem ele os quatro links
+          continuavam na ordem de tabulação e ficavam focáveis dentro de um
+          aria-hidden — o teclado caía num menu invisível. */}
       <div
         id="menu-mobile"
         className={
@@ -188,6 +200,7 @@ export default function Navbar() {
             : "pointer-events-none -translate-y-2 opacity-0")
         }
         aria-hidden={!open}
+        inert={!open}
       >
         <div className="grid-shell mt-auto pb-10">
           <ul className="col-span-4 border-t border-line">

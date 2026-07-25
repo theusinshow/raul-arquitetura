@@ -62,6 +62,10 @@
   html {
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
+    /* Também vai como <meta name="color-scheme"> pelo viewport do layout;
+       aqui para que scrollbar e controles nativos obedeçam sem depender
+       da meta. */
+    color-scheme: light;
   }
 
   body {
@@ -71,6 +75,21 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "kern";
+    /* Elimina o atraso de 300ms do duplo-toque; o pinch-zoom continua. */
+    touch-action: manipulation;
+  }
+
+  /* Títulos com linhas equilibradas e prosa sem viúvas. Não afeta os títulos
+     em máscara (cada linha já é um bloco próprio), mas resolve os que quebram
+     sozinhos — títulos de projeto, cabeçalhos das listas. */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   ::selection {

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Urbanist, Fragment_Mono } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
@@ -35,6 +35,16 @@ export const metadata: Metadata = {
     url: site.url,
   },
   robots: { index: true, follow: true },
+};
+
+/**
+ * O site é claro por definição — a paleta é monocromática e as seções pretas
+ * são capítulos, não um tema escuro. Declarar isso evita que o navegador
+ * pinte scrollbar e controles nativos como se fosse dark mode.
+ */
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
